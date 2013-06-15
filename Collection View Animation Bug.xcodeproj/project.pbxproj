@@ -16,6 +16,7 @@
 		E8F02D9D176BB43B00C0435D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E8F02D9C176BB43A00C0435D /* Default.png */; };
 		E8F02D9F176BB43B00C0435D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E8F02D9E176BB43B00C0435D /* Default@2x.png */; };
 		E8F02DA1176BB43B00C0435D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E8F02DA0176BB43B00C0435D /* Default-568h@2x.png */; };
+		E8F02DAA176BB45F00C0435D /* JPSCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F02DA9176BB45F00C0435D /* JPSCollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		E8F02D9C176BB43A00C0435D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		E8F02D9E176BB43B00C0435D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		E8F02DA0176BB43B00C0435D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		E8F02DA8176BB45F00C0435D /* JPSCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPSCollectionViewController.h; sourceTree = "<group>"; };
+		E8F02DA9176BB45F00C0435D /* JPSCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPSCollectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +83,8 @@
 			children = (
 				E8F02D99176BB43A00C0435D /* JPSAppDelegate.h */,
 				E8F02D9A176BB43A00C0435D /* JPSAppDelegate.m */,
+				E8F02DA8176BB45F00C0435D /* JPSCollectionViewController.h */,
+				E8F02DA9176BB45F00C0435D /* JPSCollectionViewController.m */,
 				E8F02D91176BB43A00C0435D /* Supporting Files */,
 			);
 			path = "Collection View Animation Bug";
@@ -167,6 +172,7 @@
 			files = (
 				E8F02D97176BB43A00C0435D /* main.m in Sources */,
 				E8F02D9B176BB43A00C0435D /* JPSAppDelegate.m in Sources */,
+				E8F02DAA176BB45F00C0435D /* JPSCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

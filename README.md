@@ -2,7 +2,7 @@
 
 ## The bug
 
-There's a bug in the otherwise excellent `UICollectionView`'s `performBatchUpdates` method which causes cells that are initially off-screen animating on-screen to just appear at their final location instead of animating there. This is better understood visually:
+There's a bug (confirmed by Apple) in the otherwise excellent `UICollectionView`'s `performBatchUpdates` method which causes cells that are initially off-screen animating on-screen to just appear at their final location instead of animating there. This is better understood visually:
 
 ![Video of bug](UICV_Animation_Bug.gif)
 

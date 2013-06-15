@@ -13,8 +13,8 @@
 #define kCollapsedHeight    100
 #define kExpandedHeight     300
 #define kNumberOfCells      10
-#define kHackEnabled        TRUE
 #define kContentOffsetKey   @"contentOffset"
+#define kHackEnabled        TRUE
 
 @implementation JPSCollectionViewController {
     NSMutableArray *_cells;

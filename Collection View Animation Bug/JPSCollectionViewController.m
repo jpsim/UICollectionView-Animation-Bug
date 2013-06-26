@@ -15,6 +15,7 @@
 #define kNumberOfCells      10
 #define kContentOffsetKey   @"contentOffset"
 #define kHackEnabled        TRUE
+#define kToggleEnabled      TRUE
 
 @implementation JPSCollectionViewController {
     NSMutableArray *_cells;
@@ -77,7 +78,13 @@
     }
     
     [collectionView performBatchUpdates:^{
-        _cells[indexPath.item] = @(newHeight);
+        for (int idx = 0; idx < _cells.count; idx++) {
+            if (idx == indexPath.item) {
+                _cells[idx] = @(newHeight);
+            } else if (kToggleEnabled && [_cells[idx] integerValue] == kExpandedHeight) {
+                _cells[idx] = @(kCollapsedHeight);
+            }
+        }
     } completion:^(BOOL finished) {
         if (kHackEnabled) {
             frameUpdate.size.height -= kExpandedHeight - kCollapsedHeight;
@@ -92,7 +99,7 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqualToString:kContentOffsetKey] && _forceContentOffset && [(UIScrollView *)object contentOffset].y != _originalOffset.y) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            UICollectionView *collectionView = (UICollectionView *)object;
+            UICollectionView *collectionView = object;
             if (collectionView.contentSize.height < (collectionView.contentOffset.y + collectionView.bounds.size.height)) {
                 _forceContentOffset = NO;
                 [collectionView scrollRectToVisible:CGRectMake(_originalOffset.x, collectionView.contentSize.height - collectionView.bounds.size.height, 1, 1) animated:YES];

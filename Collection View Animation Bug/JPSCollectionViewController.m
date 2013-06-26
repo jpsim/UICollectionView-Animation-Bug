@@ -66,8 +66,6 @@
     
     NSInteger newHeight = expand ? kExpandedHeight : kCollapsedHeight;
     
-    _cells[indexPath.item] = @(newHeight);
-    
     __block CGRect frameUpdate = collectionView.frame;
     _originalOffset = collectionView.contentOffset;
     
@@ -79,11 +77,7 @@
     }
     
     [collectionView performBatchUpdates:^{
-        UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
-        CGRect frame = cell.frame;
-        [UIView animateWithDuration:0.3 animations:^{
-            [cell setFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, newHeight)];
-        }];
+        _cells[indexPath.item] = @(newHeight);
     } completion:^(BOOL finished) {
         if (kHackEnabled) {
             frameUpdate.size.height -= kExpandedHeight - kCollapsedHeight;

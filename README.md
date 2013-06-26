@@ -23,11 +23,7 @@ frameUpdate.size.height += kExpandedHeight - kCollapsedHeight;
 collectionView.frame = frameUpdate;
 
 [collectionView performBatchUpdates:^{
-    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
-    CGRect frame = cell.frame;
-    [UIView animateWithDuration:0.3 animations:^{
-        [cell setFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, newHeight)];
-    }];
+	_cells[indexPath.item] = @(newHeight);
 } completion:^(BOOL finished) {
     frameUpdate.size.height -= kExpandedHeight - kCollapsedHeight;
     collectionView.frame = frameUpdate;
